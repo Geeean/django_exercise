@@ -1,2 +1,1 @@
-# django_exercise
-simple Django exercise
+readme file for django app.

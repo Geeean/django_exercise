@@ -1,0 +1,18 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'questions/styles.css' %}">
+
+<h2 style = "color:yellow">ueq<span style = "color:green">stio</span>ns</h2>
+
+{% if question_list %}
+  <ul>
+    {% for questions in question_list %}
+      <li>{{ questions.message }}</li>
+      <a href="{% url 'questions:update' questions.id %}">edit</a>
+      <a href="{% url 'questions:delete' questions.id %}">delete</a>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p> its quiet in heree</p>
+{% endif %}
+<a href="{% url 'questions:create' %}">ask something</a>
